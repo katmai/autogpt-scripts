@@ -1,0 +1,13 @@
+version: '3'
+services:
+  redis:
+    container_name: redis
+    hostname: redis
+    image: redis/redis-stack:latest
+    restart: always
+    volumes:
+      - $PWD/redis-data:/data
+      - $PWD/redis-stack.conf:/redis-stack.conf
+    ports:
+      - "6379:6379"
+      - "8001:8001"
